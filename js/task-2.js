@@ -1,3 +1,15 @@
+//Напиши скрипт для створення галереї зображень на основі масиву даних.
+// HTML містить список ul.gallery.
+
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
+
+// Ти можеш створити й додати HTML-елементи, використовуючи document.createElement() і elem.append() або шаблонні рядки і elem.insertAdjacentHTML().
+
+// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+// Додай мінімальне оформлення галереї флексбоксами через CSS класи.
+
+
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +36,37 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+//* Функція для створення карточки createGalleryCard(cardInfo)
+const createGalleryCard = pictureInfo => {
+  // Створення li
+  const galleryItemEl = document.createElement('li');
+
+  galleryItemEl.classList.add('gallery-card');
+
+  // Створення a
+  const galleryLinkEl = document.createElement('a');
+
+  galleryLinkEl.href = '#';
+
+  galleryItemEl.append(galleryLinkEl);
+
+  // Створення img
+  const galleryImgEl = document.createElement('img');
+
+  galleryImgEl.src = pictureInfo.url;
+  galleryImgEl.alt = pictureInfo.alt;
+  galleryImgEl.classList.add("card")
+  
+  galleryLinkEl.append(galleryImgEl);
+
+  return galleryItemEl;
+};
+
+//* Створення масиву елментів
+const galleryCardsArr = images.map(imgInfo => createGalleryCard(imgInfo));
+
+//* Вставка колекції карток на сторінку
+const galleryListEl = document.querySelector('.gallery');
+
+galleryListEl.append(...galleryCardsArr);
