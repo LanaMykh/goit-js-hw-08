@@ -13,8 +13,6 @@ const outputName = document.querySelector("#name-output");
 //или так
 //const outputName = document.getElementById("name-output");
  
-console.log(outputName);
- 
 inputName.addEventListener(`input`, () => {
     const userName = inputName.value.trim();
     outputName.textContent = userName || 'Anonymous';
