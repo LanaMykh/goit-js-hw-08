@@ -97,7 +97,7 @@ galleryContainer.addEventListener('click', (event) => {
           <img
           class="modal-image"
           src="${largeImageURL}"
-          
+
           alt="${event.target.alt}"
          />
       </div>
