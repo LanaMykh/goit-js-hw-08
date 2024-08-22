@@ -90,14 +90,14 @@ galleryContainer.addEventListener('click', (event) => {
   if (event.target.nodeName !== 'IMG') return;
 
   const largeImageURL = event.target.dataset.source;
-  console.log(`Clicked on image: ${largeImageURL}`);
-  
+  //console.log(`Clicked on image: ${largeImageURL}`);
+
   const instance = basicLightbox.create(`
       <div class="modal">
           <img
           class="modal-image"
           src="${largeImageURL}"
-          alt="${event.target.alt}"
+          alt="${veent.target.alt}"
          />
       </div>
   `)
